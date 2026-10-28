@@ -1,18 +1,280 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#182d3d" />
+        <meta
+            name="description"
+            content="Test your CSS skills: custom text selection, ::selection, and accent colors."
+        />
+        <title>Skills Check 004</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Project</title>
-</head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
 
-<body>
-    start
+        <link rel="stylesheet" href="./assets/css/style.css" />
+    </head>
+    <body>
+        <div class="grain" aria-hidden="true"></div>
 
-    <script src="./assets/js/main.js"></script>
-</body>
+        <header class="topbar">
+            <a class="brand" href="./index.html" aria-label="Type Lab home">
+                <span class="brand-mark">T<span>.</span></span>
+                <span>TYPE<span class="brand-light">LAB</span></span>
+            </a>
 
+            <div class="top-meta">
+                <span class="status-dot"></span>
+                SKILLS CHECK / 004
+            </div>
+
+            <a
+                class="back-link"
+                href="https://freetimezp.github.io/roadmap-web-coding/"
+            >
+                <span aria-hidden="true">↗</span> ROADMAP
+            </a>
+        </header>
+
+        <main class="page-shell">
+            <section class="intro">
+                <div class="intro-copy">
+                    <p class="eyebrow">
+                        <span>CSS FUNDAMENTALS</span> / CHAPTER 04
+                    </p>
+
+                    <h1>Make every<br />selection <span>count.</span></h1>
+
+                    <p class="intro-text">
+                        A little color can change the whole reading experience.
+                        Prove you understand custom text selection and CSS
+                        accents.
+                    </p>
+
+                    <div class="intro-tags">
+                        <span>20 QUESTIONS</span>
+                        <span>HTML + CSS</span>
+                        <span>BEGINNER</span>
+                    </div>
+                </div>
+
+                <div
+                    class="specimen"
+                    aria-label="Text selection color specimen"
+                >
+                    <div class="specimen-top">
+                        <span>COLOR SPECIMEN</span>
+                        <span>NO. 004</span>
+                    </div>
+
+                    <div class="specimen-type">
+                        Aa<span class="specimen-highlight">Aa</span>
+                    </div>
+
+                    <div class="specimen-line"></div>
+
+                    <div class="specimen-bottom">
+                        <span>SELECT YOUR STYLE</span>
+                        <span class="specimen-colors">
+                            <i></i><i></i><i></i>
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="exam-layout" aria-label="Skills assessment">
+                <aside class="exam-sidebar">
+                    <div class="side-card">
+                        <p class="side-label">YOUR PROGRESS</p>
+                        <div class="progress-number">
+                            <span id="progress-count">01</span>
+                            <span class="progress-total">/ 20</span>
+                        </div>
+
+                        <div
+                            class="progress-track"
+                            role="progressbar"
+                            aria-label="Assessment progress"
+                            aria-valuemin="0"
+                            aria-valuemax="20"
+                            aria-valuenow="0"
+                            id="progress-bar"
+                        >
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+
+                        <p class="progress-caption" id="progress-caption">
+                            Ready to begin
+                        </p>
+
+                        <div class="side-divider"></div>
+
+                        <div class="stat-row">
+                            <span>ANSWERED</span>
+                            <strong id="answered-count">00</strong>
+                        </div>
+
+                        <div class="stat-row">
+                            <span>POINTS</span>
+                            <strong id="points-count">00</strong>
+                        </div>
+                    </div>
+
+                    <div class="side-note">
+                        <span class="note-icon">✳</span>
+                        <p>
+                            <strong>Think before you click.</strong>
+                            Some questions have more than one correct answer.
+                        </p>
+                    </div>
+                </aside>
+
+                <section class="question-panel" id="question-panel">
+                    <div class="question-topline">
+                        <span id="question-category">SELECTOR BASICS</span>
+                        <span id="question-type">SINGLE ANSWER</span>
+                    </div>
+
+                    <div class="question-heading">
+                        <span class="question-index" id="question-index">
+                            Q.01
+                        </span>
+                        <h2 id="question-title">Loading question…</h2>
+                    </div>
+
+                    <div id="question-code-wrap" class="code-wrap" hidden>
+                        <div class="code-header">
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-dot"></span>
+                            <span class="code-file">style.css</span>
+                        </div>
+                        <pre><code id="question-code"></code></pre>
+                    </div>
+
+                    <p class="question-hint" id="question-hint" hidden></p>
+
+                    <form id="answer-form">
+                        <fieldset class="answers-fieldset">
+                            <legend class="sr-only">Choose your answer</legend>
+                            <div class="answers" id="answers"></div>
+                        </fieldset>
+
+                        <div
+                            class="feedback"
+                            id="feedback"
+                            aria-live="polite"
+                            hidden
+                        >
+                            <div class="feedback-icon" id="feedback-icon">
+                                ✓
+                            </div>
+                            <div>
+                                <h3 id="feedback-title">Correct!</h3>
+                                <p id="feedback-text"></p>
+                            </div>
+                        </div>
+
+                        <div class="question-actions">
+                            <span class="keyboard-hint">
+                                TAKE YOUR TIME. GET IT RIGHT.
+                            </span>
+                            <button
+                                class="primary-button"
+                                id="check-button"
+                                type="submit"
+                            >
+                                CHECK ANSWER <span aria-hidden="true">↗</span>
+                            </button>
+                            <button
+                                class="primary-button"
+                                id="next-button"
+                                type="button"
+                                hidden
+                            >
+                                NEXT QUESTION <span aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </section>
+
+            <section class="result-panel" id="result-panel" hidden>
+                <div class="result-kicker">
+                    <span class="status-dot"></span> ASSESSMENT COMPLETE
+                </div>
+
+                <div class="result-layout">
+                    <div>
+                        <p class="eyebrow">YOUR FINAL RESULT</p>
+                        <h2 id="result-title">Well done.</h2>
+                        <p
+                            class="result-description"
+                            id="result-description"
+                        ></p>
+                    </div>
+
+                    <div class="score-ring" id="score-ring">
+                        <div class="score-inner">
+                            <strong id="final-score">0%</strong>
+                            <span>YOUR SCORE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="result-stats">
+                    <div>
+                        <span>CORRECT</span>
+                        <strong id="final-correct">0 / 20</strong>
+                    </div>
+                    <div>
+                        <span>POINTS</span>
+                        <strong id="final-points">0 / 20</strong>
+                    </div>
+                    <div>
+                        <span>RESULT</span>
+                        <strong id="final-status">KEEP LEARNING</strong>
+                    </div>
+                </div>
+
+                <div class="result-actions">
+                    <button
+                        class="primary-button"
+                        id="restart-button"
+                        type="button"
+                    >
+                        TRY AGAIN <span aria-hidden="true">↻</span>
+                    </button>
+
+                    <a
+                        class="secondary-button"
+                        href="https://freetimezp.github.io/roadmap-web-coding/"
+                    >
+                        BACK TO ROADMAP ↗
+                    </a>
+                </div>
+
+                <p class="result-footnote">
+                    A fresh attempt reshuffles the questions and answer options.
+                </p>
+            </section>
+
+            <footer class="page-footer">
+                <span>TYPELAB © 2026</span>
+                <span>LEARN THE RULES. PLAY WITH THE DETAILS.</span>
+                <a
+                    href="https://freetimezp.github.io/school-004-custom-selection/"
+                >
+                    REVIEW LESSON 004 ↗
+                </a>
+            </footer>
+        </main>
+
+        <script type="module" src="./assets/js/main.js" defer></script>
+    </body>
 </html>
